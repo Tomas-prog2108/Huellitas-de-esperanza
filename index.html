@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="Img/png"   href="Img/Icon.png">
+    <link rel="stylesheet" href="style.css">
+<title>
+    Huellitas de esperanza
+</title>
+</head>
+<body>
+
+<header>
+
+    <nav  class="navbar" id="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="Img/Logo-removebg-preview.png" alt="Logo de la pagina"></a>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="Adopcion.html" class="links">Adopción</a></li>
+            <li><a href="Donaciones.html" class="links">Donaciones</a></li>
+            <li><a href="Cuidados.html" class="links">Cuidados</a></li>
+            <li><a href="Contacto.html" class="links">Contactanos</a></li>
+        </ul>
+
+        <div class="perfil">
+            <img src="Img/image.png" alt="Perfil" class="icono-perfil">
+        </div>
+        <div class="Hamburguesa" id="Hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+</header>
+
+<main>
+    <section class="section-h" aria-label="Estadíticas">
+        <div class="Contenedor-carrusel">
+            <div class="Carrusel-wrapper">
+                <div class="Carrusel" id="Carrusel">
+                    <div class="Carrusel-slide active">
+                        <img src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/humpback-whale.jpeg?crop=0%2C84%2C4000%2C2200&wid=1300&hei=715&scl=3.076923076923077" alt="Ballenita">
+                        <div class="Contenido-carrusel">
+                            <h3>En 2050 habrá más plastico que peces en el oceano, si no cambiamos nuestros hábitos. <br>(Foro Ecominómico Mundial)</h3>
+                        </div>
+                    </div>
+                    <div class="Carrusel-slide">
+                        <img src="Img/Silvestre.jpg" alt="Silvestre">
+                        <div class="Contenido-carrusel">
+                            <h3>Silvestre</h3>
+                            <p>S</p>
+                        </div>
+                    </div>
+                    <div class="Carrusel-slide">
+                        <img src="https://culturacientifica.com/app/uploads/2017/03/complejidad-animal.jpg" alt="Lolita">
+                        <div class="Contenido-carrusel">
+                            <h3>Lolita</h3>
+                            <p>A</p>
+                        </div>
+                    </div>
+                    <div class="Carrusel-slide">
+                        <img src="Img/Rodolfo.jpg" alt="Pepe">
+                        <div class="Contenido-carrusel">
+                            <h3>Pepe</h3>
+                            <p>LO</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-nav carousel-prev" onclick="moveSlide(-1)">‹</button>
+                <button class="carousel-nav carousel-next" onclick="moveSlide(1)">›</button>
+
+            </div>
+            <div class="Indicadores-carrusel" id="Indicadores">
+                <button class="Indicador active" onclick="goToSlide(0)"></button>
+                <button class="Indicador" onclick="goToSlide(1)"></button>
+                <button class="Indicador" onclick="goToSlide(2)"></button>
+                <button class="Indicador" onclick="goToSlide(3)"></button>
+            </div>
+
+        </div>
+
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
