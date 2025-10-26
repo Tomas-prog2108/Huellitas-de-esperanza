@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b99a1a3007.js" crossorigin="anonymous"></script>
+    <title>Historias de Éxito</title>
+    <style>
+        /* Reset básico y configuración general */
+        
+        :root{
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: arial, sans-serif;
+            background: white;
+            padding: 60px 20px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px;
+            box-sizing: border-box;
+        }
+
+.navbar{
+
+  position: fixed;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--transition);
+  z-index: 1000;
+  transition: var(--transition);
+  background-color: #A2D5C6;
+  top: 0;
+
+}
+
+.navbar-contenedor{
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  line-height: 70px;
+  max-width: 1200px;
+}
+
+.logo img{
+
+  height: auto;
+  margin-top: 30px;
+  width: 70px;
+    
+}
+
+.nav-links{
+
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+
+}
+
+.links{
+
+  color: #1A4C48;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.links::after{
+  content: '';
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #27ae60;
+  transition: var(--transition);
+  position: absolute;
+}
+
+.links:hover::after,
+.links.active::after{
+  width: 100%;
+}
+
+.Hamburguesa{
+
+  flex-direction: column;
+  cursor: pointer;
+  display: none;
+}
+
+.Hamburguesa span{
+
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: var(--transition);
+  width: 25px;
+}
+
+.perfil{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.login-icon {
+  font-size: 28px;
+  color: #1A4C48;
+  cursor: pointer;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 30px;          
+  width: 50px;
+  font-weight: 900;
+}
+
+
+.login-icon::before{
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: var(--transition);
+  color: #1A4C48;
+  content: "\f2f6";
+}
+
+.login-icon::after{
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition);
+  color: #1A4C48;
+  content: "\f6be";
+}
+
+.login-icon:hover::before{
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.login-icon:hover::after{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+        /* Contenedor principal de la sección */
+        .success-stories-section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Título principal de la sección */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5f7c;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Subtítulo o descripción */
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #5a7a8f;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Contenedor de todas las historias */
+        .stories-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        /* Card individual de historia */
+        .story-card {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 750px;
+        }
+
+        /* Efecto hover en la card completa */
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Alineación alternada - cards impares a la derecha */
+        .story-card:nth-child(odd) {
+            margin-left: auto;
+        }
+
+        /* Alineación alternada - cards pares a la izquierda */
+        .story-card:nth-child(even) {
+            margin-right: auto;
+            flex-direction: row-reverse;
+        }
+
+        /* Contenedor de la imagen */
+        .story-image-container {
+            flex: 0 0 280px;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Imagen de la historia */
+        .story-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        /* Animación de zoom en hover sobre la imagen */
+        .story-card:hover .story-image {
+            transform: scale(1.1);
+        }
+
+        /* Overlay sutil sobre la imagen en hover */
+        .story-image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 95, 124, 0);
+            transition: background 0.3s ease;
+        }
+
+        .story-card:hover .story-image-container::after {
+            background: rgba(44, 95, 124, 0.1);
+        }
+
+        /* Contenedor del texto */
+        .story-content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        /* Título de cada historia */
+        .story-title {
+            font-size: 1.6rem;
+            color: #2c5f7c;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Texto de la historia */
+        .story-text {
+            font-size: 1rem;
+            color: #5a7a8f;
+            line-height: 1.7;
+        }
+
+        /* Icono decorativo de corazón */
+        .heart-icon {
+            display: inline-block;
+            color: #ff6b9d;
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        img{
+
+            border-radius: 12px;
+        }
+
+        
+
+        /* RESPONSIVE: Tablets y móviles */
+        @media (max-width: 768px) {
+            /* En móvil, todas las cards se centran */
+            .story-card,
+            .story-card:nth-child(odd),
+            .story-card:nth-child(even) {
+                flex-direction: column !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                max-width: 100%;
+            }
+
+            /* La imagen ocupa el ancho completo */
+            .story-image-container {
+                flex: 0 0 250px;
+                width: 100%;
+                height: 250px;
+            }
+
+            /* Ajustes de texto en móvil */
+            .story-content {
+                padding: 25px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .story-title {
+                font-size: 1.4rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+        }
+
+        /* RESPONSIVE: Móviles pequeños */
+        @media (max-width: 480px) {
+            body {
+                padding: 40px 15px;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .story-title {
+                font-size: 1.3rem;
+            }
+
+            .story-text {
+                font-size: 0.95rem;
+            }
+
+            .story-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+
+  <nav  class="navbar" id="navbar">
+    <div class="navbar-contenedor">
+      <div class="logo">
+      <a href="index.html"><img src="Img/Logo-H.png" alt="Logo de la pagina"></a>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="Adopcion.html" class="links">Adopción</a></li>
+      <li><a href="Donación.html" class="links">Donaciones</a></li>
+      <li><a href="Fundaciones.html" class="links">Fundaciones</a></li>
+      <li><a href="jm.html" class="links">Historias</a></li>
+      <li><a href="Contacto.html" class="links">Contacto</a></li>
+    </ul>
+    
+    <div class="perfil">
+      <a href="Inicio.html">
+        <i class="fas login-icon"></i>
+      </a>
+    </div>
+    <div class="Hamburguesa" id="Hamburguesa">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  
+  </nav>
+</header>
+
+    <!-- Sección completa de Historias de Éxito -->
+     <section class="success-stories-section">
+        <!-- Título y descripción de la sección -->
+        <h1 class="section-title">Historias de Éxito</h1>
+        <p class="section-subtitle">
+            Cada adopción es una historia de amor, esperanza y nuevos comienzos. 
+            Conoce a algunas de las familias que han encontrado su felicidad.
+        </p>
+
+        <!-- Contenedor de todas las historias -->
+        <div class="stories-container">
+            
+            <!-- Historia 1 - Alineada a la derecha -->
+            <article class="story-card">
+                <div class="story-image-container">
+                   <img src="https://images.unsplash.com/photo-1633722715463-d30f4f325e24?w=600&h=600&fit=crop" 
+                        alt="Rocky y su familia" 
+                        class="story-image">
+                </div>
+                <div class="story-content">
+                    <h2 class="story-title">
+                        <span class="heart-icon">♥</span>
+                        Rocky
+                    </h2>
+                    <p class="story-text">
+                    
+                       Rocky llevaba meses en un refugio esperando a alguien que lo notara. Cuando compartimos su historia, una familia vio su foto y sintió que debía conocerlo.
+                       Hoy Rocky vive con ellos, corre todas las mañanas por el parque y duerme en una cama que parece hecha solo para él.
+                       Cada vez que nos mandan fotos, sigue igual: con esa sonrisa que nunca perdió.
+                       Su vida cambió gracias a una adopción, pero también gracias a una conexión.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Historia 2 - Alineada a la izquierda -->
+            <article class="story-card">
+                <div class="story-image-container">
+                    <img src="https://images.unsplash.com/photo-1573865526739-10c1dd7aa5b8?w=600&h=600&fit=crop" 
+                         alt="Luna en su hogar" 
+                         class="story-image">
+                </div>
+                <div class="story-content">
+                    <h2 class="story-title">
+                        <span class="heart-icon">♥</span>
+                        Luna
+                    </h2>
+                    <p class="story-text">
+                     Luna solía dormir en la calle, buscando cada día el mismo rayo de sol. Una persona lo vio, nos escribió, y en pocos días logramos conectar con una fundación que lo recibió.
+                     Allí lo cuidaron hasta que una familia decidió adoptarlo.
+                     Ahora Luna sigue buscando el sol cada mañana, pero lo hace desde una ventana, con su nueva dueña que le dice “mi pequeño rayito”.
+                     A veces, una conexión puede cambiar todo un destino.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Historia 3 - Alineada a la derecha -->
+            <article class="story-card">
+                <div class="story-image-container">
+                    <img src="https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?w=600&h=600&fit=crop" 
+                         alt="Estrella y su dueña" 
+                         class="story-image">
+                </div>
+                <div class="story-content">
+                    <h2 class="story-title">
+                        <span class="heart-icon">♥</span>
+                        Estrella
+                    </h2>
+                    <p class="story-text">
+                        Estrella esperó más de un año para ser adoptada. Todos decían que era demasiado seria, que no llamaba la atención.
+                        Hasta que una pareja mayor la vio en nuestra página y decidió conocerla. Se enamoraron en segundos.
+                        Hoy Estrella los acompaña a todas partes, cuida su casa y duerme a los pies de la cama.
+                        Pasó de esperar compañía a convertirse en la mejor compañera.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Historia 4 - Alineada a la izquierda -->
+            <article class="story-card">
+                <div class="story-image-container">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&h=600&fit=crop" 
+                         alt="Michi y su dueño" 
+                         class="story-image">
+
+                </div>
+                <div class="story-content">
+                    <h2 class="story-title">
+                        <span class="heart-icon">♥</span>
+                        Michi
+                    </h2>
+                    <p class="story-text">
+                        Después de perder a su mascota anterior, Pedro pensó que nunca podría 
+                        volver a amar. Entonces llegó Michi, un gato anciano que necesitaba 
+                        un hogar tranquilo. Juntos se sanaron mutuamente y ahora son inseparables.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Historia 5 - Alineada a la derecha -->
+            <article class="story-card">
+                <div class="story-image-container">
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&h=600&fit=crop" 
+                         alt="Toby con su familia" 
+                         class="story-image">
+                </div>
+                <div class="story-content">
+                    <h2 class="story-title">
+                        <span class="heart-icon">♥</span>
+                        Toby
+                    </h2>
+                    <p class="story-text">
+                        Toby esperó casi un año por su familia perfecta. Los Rodríguez buscaban 
+                        un perro tranquilo para acompañar a su abuela, y Toby resultó ser ideal. 
+                        Ahora pasan las tardes juntas en el jardín, creando recuerdos inolvidables.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+</body>
+</html>

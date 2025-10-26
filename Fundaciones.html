@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b99a1a3007.js" crossorigin="anonymous"></script>
+    <title>Adopción</title>
+    <link rel="stylesheet" href="Fundacioness.css">
+</head>
+<body>
+
+<header>
+
+  <nav  class="navbar" id="navbar">
+    <div class="navbar-contenedor">
+      <div class="logo">
+      <a href="index.html"><img src="Img/Logo-H.png" alt="Logo de la pagina"></a>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="Adopcion.html" class="links">Adopción</a></li>
+      <li><a href="Donación.html" class="links">Donaciones</a></li>
+      <li><a href="Fundaciones.html" class="links">Fundaciones</a></li>
+      <li><a href="jm.html" class="links">Historias</a></li>
+      <li><a href="Contacto.html" class="links">Contacto</a></li>
+    </ul>
+    
+    <div class="perfil">
+      <a href="Inicio.html">
+        <i class="fas login-icon"></i>
+      </a>
+    </div>
+    <div class="Hamburguesa" id="Hamburguesa">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  
+  </nav>
+</header>
+
+  <section class="centros">
+    <header class="titulo">
+      <h1>
+        Centros de adopción en Colombia
+      </h1>
+    </header>
+      <div class="lugares">
+      <div class="lugar" data-nombre="Amazonas"></div>
+      <div class="lugar" data-nombre="Arauca"></div>
+      <div class="lugar" data-nombre="Atlántico"></div>
+      <div class="lugar" data-nombre="Boyacá"></div>
+      <div class="lugar" data-nombre="Bolívar"></div>
+      <div class="lugar" data-nombre="Caldas"></div>
+      <div class="lugar" data-nombre="Caquetá"></div>
+      <div class="lugar" data-nombre="Casanare"></div>
+      <div class="lugar" data-nombre="Cauca"></div>
+      <div class="lugar" data-nombre="Cesar"></div>
+      <div class="lugar" data-nombre="Chocó"></div>
+      <div class="lugar" data-nombre="Córdoba"></div>
+      <div class="lugar" data-nombre="Cundinamarca"></div>
+      <div class="lugar" data-nombre="Guainía"></div>
+      <div class="lugar" data-nombre="Guaviare"></div>
+      <div class="lugar" data-nombre="Huila"></div>
+      <div class="lugar" data-nombre="La Guajira"></div>
+      <div class="lugar" data-nombre="Magdalena"></div>
+      <div class="lugar" data-nombre="Meta"></div>
+      <div class="lugar" data-nombre="Nariño"></div>
+      <div class="lugar" data-nombre="Norte de Santander"></div>
+      <div class="lugar" data-nombre="Putumayo"></div>
+      <div class="lugar" data-nombre="Quindío"></div>
+      <div class="lugar" data-nombre="Risaralda"></div>
+      <div class="lugar" data-nombre="San Andres y Providencia"></div>
+      <div class="lugar" data-nombre="Santander"></div>
+      <div class="lugar" data-nombre="Sucre"></div>
+      <div class="lugar" data-nombre="Tolima"></div>
+      <div class="lugar" data-nombre="Valle del Cauca"></div>
+      <div class="lugar" data-nombre="Vaupés"></div>
+      <div class="lugar" data-nombre="Vichada"></div>
+      <div class="lugar" data-nombre="Antioquia"></div>
+    </div>
+  </section>
+
+
+    <script>
+      document.querySelectorAll('.lugar').forEach(lugar => {
+        lugar.addEventListener('click', () => {
+          const nombre = lugar.getAttribute('data-nombre');
+          const url = `${nombre}.html`;
+          window.location.href = url;
+        });
+      });
+  </script>
+  
+
+
+
+</body>
+</html>

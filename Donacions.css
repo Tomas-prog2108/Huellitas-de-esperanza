@@ -1,0 +1,259 @@
+:root{
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: arial, sans-serif;
+  background-color: white;
+  color: #333;
+  margin: 0;
+  padding-top: 80px;
+  line-height: 1.6;
+}
+
+.navbar{
+
+  position: fixed;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--transition);
+  z-index: 1000;
+  transition: var(--transition);
+  background-color: #A2D5C6;
+  top: 0;
+
+}
+
+.navbar-contenedor{
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  line-height: 70px;
+  max-width: 1200px;
+}
+
+.logo img{
+
+  height: auto;
+  margin-top: 30px;
+  width: 70px;
+    
+}
+
+.nav-links{
+
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+
+}
+
+.links{
+
+  color: #1A4C48;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.links::after{
+  content: '';
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #27ae60;
+  transition: var(--transition);
+  position: absolute;
+}
+
+.links:hover::after,
+.links.active::after{
+  width: 100%;
+}
+
+.Hamburguesa{
+
+  flex-direction: column;
+  cursor: pointer;
+  display: none;
+}
+
+.Hamburguesa span{
+
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: var(--transition);
+  width: 25px;
+}
+
+.perfil{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.login-icon {
+  font-size: 28px;
+  color: #1A4C48;
+  cursor: pointer;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 30px;          
+  width: 50px;
+  font-weight: 900;
+}
+
+
+.login-icon::before{
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: var(--transition);
+  color: #1A4C48;
+  content: "\f2f6";
+}
+
+.login-icon::after{
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition);
+  color: #1A4C48;
+  content: "\f6be";
+}
+
+.login-icon:hover::before{
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.login-icon:hover::after{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+h1, h2, h3, h4 {
+    text-align: center;
+    font-weight: 600;
+    color: #222;
+    margin-top: 20px;
+}
+
+p {
+    max-width: 700px;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 30px auto;
+    width: 80%;
+    max-width: 700px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(118, 205, 19, 0.1);
+}
+
+thead td {
+    background-color: #f3f3f3;
+    font-weight: bold;
+    padding: 15px;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+}
+
+table tr:first-child td,
+table tr:last-child td {
+    text-align: center;
+    background-color: #f3f3f3;
+    font-weight: bold;
+    border: none;
+    padding: 20px;
+}
+
+
+.boton-donacion {
+    display: inline-block;
+    width: 80%;
+    height: 100px;
+    line-height: 100px; /* Centra el texto verticalmente */
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.boton-donacion:hover {
+    background-color: #6396d9;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.ancho-total {
+    display: block;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+
+
+.contenedor {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.presentacion h2 {
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.formas-donacion {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    margin-top: 30px;
+}
+
+.opciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.opciones article {
+    flex: 1 1 300px;
+    background-color: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+

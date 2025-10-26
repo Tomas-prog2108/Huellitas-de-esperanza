@@ -1,0 +1,466 @@
+/* Importación de la fuente Poppins desde Google Fonts con diferentes pesos */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+/* Reset de estilos: elimina márgenes, padding y establece box-sizing uniforme */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Aplicación de la fuente Poppins a todo el body e inputs */
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+  position: relative;
+  width: 100%;
+  background-color: #d0f5eabb; /* Color de fondo verde claro con transparencia */
+  min-height: 100vh; /* Altura mínima del viewport completo */
+  overflow: hidden; /* Oculta contenido que se desborde */
+}
+
+/* CONTENEDOR DE FORMULARIOS */
+.forms-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* CONTENEDOR DE FORMULARIOS DE LOGIN Y REGISTRO */
+.signin-signup {
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  transform: translate(-50%, -50%); /* Centrado perfecto */
+  left: 75%; /* Posicionado hacia la derecha */
+  width: 50%; /* Ancho del 50% del contenedor */
+  transition: 1s 0.7s ease-in-out; /* Animación suave para transiciones */
+  display: grid;
+  grid-template-columns: 1fr;
+  z-index: 5; /* Capa por encima de otros elementos */
+}
+
+/* ESTILOS GENERALES PARA FORMULARIOS */
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Elementos apilados verticalmente */
+  padding: 0rem 5rem; /* Espaciado interno horizontal */
+  transition: all 0.2s 0.7s; /* Transición suave */
+  overflow: hidden;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+/* FORMULARIO DE REGISTRO (inicialmente oculto) */
+form.sign-up-form {
+  opacity: 0; /* Invisible por defecto */
+  z-index: 1; /* Capa inferior */
+}
+
+/* FORMULARIO DE LOGIN (visible por defecto) */
+form.sign-in-form {
+  z-index: 2; /* Capa superior */
+}
+
+/* TÍTULO DE LOS FORMULARIOS */
+.title {
+  font-size: 2.2rem;
+  color: #333f37; /* Verde oscuro */
+  margin-bottom: 10px;
+}
+
+/* CAMPOS DE ENTRADA DE DATOS */
+.input-field {
+  max-width: 380px;
+  width: 100%;
+  background-color: #9dc5b2; /* Verde medio */
+  margin: 10px 0;
+  height: 55px;
+  border-radius: 55px; /* Bordes completamente redondeados */
+  display: grid;
+  grid-template-columns: 15% 85%; /* 15% para icono, 85% para input */
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+/* ICONOS DENTRO DE LOS CAMPOS DE ENTRADA */
+.input-field i {
+  text-align: center;
+  line-height: 55px; /* Centrado vertical del icono */
+  color: #bdf7d8; /* Verde claro */
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+
+/* INPUTS DE TEXTO */
+.input-field input {
+  background: none; /* Sin fondo */
+  outline: none; /* Sin borde al hacer focus */
+  border: none; /* Sin borde */
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333; /* Texto oscuro */
+}
+
+/* PLACEHOLDER DE LOS INPUTS */
+.input-field input::placeholder {
+  color: #3e664f; /* Verde oscuro para el placeholder */
+  font-weight: 500;
+}
+
+/* TEXTO DESCRIPTIVO DE REDES SOCIALES */
+.social-text {
+  padding: 0.7rem 0;
+  font-size: 1rem;
+}
+
+/* CONTENEDOR DE ICONOS DE REDES SOCIALES */
+.social-media {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+}
+
+/* ESTILOS INDIVIDUALES DE ICONOS SOCIALES */
+.social-icon {
+  height: 46px;
+  width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrado del contenido */
+  margin: 0 0.45rem; /* Espaciado entre iconos */
+  color: #000000;
+  border-radius: 50%; /* Forma circular */
+  border: 1px solid #000000;
+  text-decoration: none; /* Sin subrayado */
+  font-size: 1.1rem;
+  transition: 0.3s; /* Animación suave en hover */
+}
+
+/* EFECTO HOVER EN ICONOS SOCIALES */
+.social-icon:hover {
+  color: #75c288; /* Verde más claro */
+  border-color: #3a6851; /* Borde verde oscuro */
+}
+
+/* BOTONES PRINCIPALES */
+.btn {
+  width: 150px;
+  background-color: #599773; /* Verde medio */
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px; /* Bordes redondeados */
+  color: #000000;
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer; /* Cambia cursor a puntero */
+  transition: 0.5s; /* Animación suave */
+}
+
+/* EFECTO HOVER EN BOTONES */
+.btn:hover {
+  background-color: #4b8d6e; /* Verde más oscuro al pasar mouse */
+}
+
+/* CONTENEDOR DE PANELES LATERALES */
+.panels-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+}
+
+/* ELEMENTO CIRCULAR DECORATIVO DE FONDO */
+.container:before {
+  content: "";
+  position: absolute;
+  height: 2000px;
+  width: 2000px;
+  top: -10%;
+  right: 48%;
+  transform: translateY(-50%);
+  background-image: linear-gradient(-45deg, #67c592 0%, #64b88e 100%); /* Gradiente verde */
+  transition: 1.8s ease-in-out; /* Animación suave para transiciones */
+  border-radius: 50%; /* Forma circular */
+  z-index: 6; /* Capa alta */
+}
+
+/* IMÁGENES DENTRO DE LOS PANELES */
+.image {
+  width: 100%;
+  transition: transform 1.1s ease-in-out; /* Animación de transformación */
+  transition-delay: 0.4s; /* Retraso en la animación */
+}
+
+/* ESTILOS GENERALES DE PANELES */
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Alineación a la derecha */
+  justify-content: space-around; /* Distribución uniforme del espacio */
+  text-align: center;
+  z-index: 6;
+}
+
+/* PANEL IZQUIERDO */
+.left-panel {
+  pointer-events: all; /* Permite interacciones */
+  padding: 3rem 17% 2rem 12%; /* Espaciado interno */
+}
+
+/* PANEL DERECHO */
+.right-panel {
+  pointer-events: none; /* No permite interacciones inicialmente */
+  padding: 3rem 12% 2rem 17%; /* Espaciado interno */
+}
+
+/* CONTENIDO DE LOS PANELES */
+.panel .content {
+  color: #000000ee; /* Negro con transparencia */
+  transition: transform 0.9s ease-in-out; /* Animación de transformación */
+  transition-delay: 0.6s; /* Retraso en la animación */
+}
+
+/* TÍTULOS DENTRO DE LOS PANELES */
+.panel h3 {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 1.5rem;
+}
+
+/* PÁRRAFOS DENTRO DE LOS PANELES */
+.panel p {
+  font-size: 0.95rem;
+  padding: 0.7rem 0;
+}
+
+/* BOTONES TRANSPARENTES DE LOS PANELES */
+.btn.transparent {
+  margin: 0;
+  background: none; /* Sin fondo */
+  border: 2px solid #fff; /* Borde blanco */
+  width: 130px;
+  height: 41px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* POSICIONAMIENTO INICIAL DEL PANEL DERECHO (fuera de vista) */
+.right-panel .image,
+.right-panel .content {
+  transform: translateX(800px); /* Desplazado hacia la derecha */
+}
+
+/* ================ ANIMACIONES ================ */
+
+/* TRANSFORMACIÓN DEL CÍRCULO CUANDO SE ACTIVA EL MODO REGISTRO */
+.container.sign-up-mode:before {
+  transform: translate(100%, -50%); /* Mueve el círculo */
+  right: 52%;
+}
+
+/* ANIMACIÓN DEL PANEL IZQUIERDO AL ACTIVAR MODO REGISTRO */
+.container.sign-up-mode .left-panel .image,
+.container.sign-up-mode .left-panel .content {
+  transform: translateX(-800px); /* Desplaza hacia la izquierda */
+}
+
+/* REPOSICIONAMIENTO DE FORMULARIOS EN MODO REGISTRO */
+.container.sign-up-mode .signin-signup {
+  left: 25%; /* Mueve formularios hacia la izquierda */
+}
+
+/* MOSTRAR FORMULARIO DE REGISTRO */
+.container.sign-up-mode form.sign-up-form {
+  opacity: 1; /* Hace visible el formulario de registro */
+  z-index: 2; /* Lo pone en primer plano */
+}
+
+/* OCULTAR FORMULARIO DE LOGIN */
+.container.sign-up-mode form.sign-in-form {
+  opacity: 0; /* Oculta el formulario de login */
+  z-index: 1; /* Lo pone en segundo plano */
+}
+
+/* MOSTRAR PANEL DERECHO EN MODO REGISTRO */
+.container.sign-up-mode .right-panel .image,
+.container.sign-up-mode .right-panel .content {
+  transform: translateX(0%); /* Regresa a su posición original */
+}
+
+/* CAMBIO DE INTERACTIVIDAD DE PANELES */
+.container.sign-up-mode .left-panel {
+  pointer-events: none; /* Desactiva interacciones del panel izquierdo */
+}
+
+.container.sign-up-mode .right-panel {
+  pointer-events: all; /* Activa interacciones del panel derecho */
+}
+
+/* ================ RESPONSIVE DESIGN ================ */
+
+/* TABLETS Y PANTALLAS MEDIANAS (máximo 870px) */
+@media (max-width: 870px) {
+  .container {
+    min-height: 800px;
+    height: 100vh;
+  }
+  
+  /* Reposicionamiento de formularios para pantallas medianas */
+  .signin-signup {
+    width: 100%;
+    top: 95%;
+    transform: translate(-50%, -100%);
+    transition: 1s 0.8s ease-in-out;
+  }
+
+  /* Centrado de formularios */
+  .signin-signup,
+  .container.sign-up-mode .signin-signup {
+    left: 50%;
+  }
+
+  /* Cambio de layout de paneles a una sola columna con filas */
+  .panels-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr; /* Tres filas */
+  }
+
+  /* Cambio de dirección de paneles a horizontal */
+  .panel {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5rem 8%;
+    grid-column: 1 / 2;
+  }
+
+  /* Posicionamiento específico de paneles */
+  .right-panel {
+    grid-row: 3 / 4; /* Tercera fila */
+  }
+
+  .left-panel {
+    grid-row: 1 / 2; /* Primera fila */
+  }
+
+  /* Tamaño reducido de imágenes */
+  .image {
+    width: 200px;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.6s;
+  }
+
+  /* Ajuste de contenido de paneles */
+  .panel .content {
+    padding-right: 15%;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.8s;
+  }
+
+  /* Reducción de tamaño de títulos */
+  .panel h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Reducción de tamaño de párrafos */
+  .panel p {
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
+  }
+
+  /* Reducción de botones transparentes */
+  .btn.transparent {
+    width: 110px;
+    height: 35px;
+    font-size: 0.7rem;
+  }
+
+  /* Reposicionamiento del círculo decorativo */
+  .container:before {
+    width: 1500px;
+    height: 1500px;
+    transform: translateX(-50%);
+    left: 30%;
+    bottom: 68%;
+    right: initial;
+    top: initial;
+    transition: 2s ease-in-out;
+  }
+
+  /* Animación del círculo en modo registro */
+  .container.sign-up-mode:before {
+    transform: translate(-50%, 100%);
+    bottom: 32%;
+    right: initial;
+  }
+
+  /* Animaciones verticales para pantallas medianas */
+  .container.sign-up-mode .left-panel .image,
+  .container.sign-up-mode .left-panel .content {
+    transform: translateY(-300px); /* Desplazamiento vertical hacia arriba */
+  }
+
+  .container.sign-up-mode .right-panel .image,
+  .container.sign-up-mode .right-panel .content {
+    transform: translateY(0px); /* Regresa a posición original */
+  }
+
+  .right-panel .image,
+  .right-panel .content {
+    transform: translateY(300px); /* Desplazamiento inicial hacia abajo */
+  }
+
+  /* Reposicionamiento de formularios en modo registro */
+  .container.sign-up-mode .signin-signup {
+    top: 5%;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* MÓVILES (máximo 570px) */
+@media (max-width: 570px) {
+  /* Reducción de padding en formularios */
+  form {
+    padding: 0 1.5rem;
+  }
+
+  /* Ocultar imágenes en móviles */
+  .image {
+    display: none;
+  }
+  
+  /* Reducción de padding en contenido */
+  .panel .content {
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Padding general del contenedor */
+  .container {
+    padding: 1.5rem;
+  }
+
+  /* Ajuste del círculo decorativo para móviles */
+  .container:before {
+    bottom: 72%;
+    left: 50%;
+  }
+
+  /* Ajuste del círculo en modo registro para móviles */
+  .container.sign-up-mode:before {
+    bottom: 28%;
+    left: 50%;
+  }
+}

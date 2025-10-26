@@ -1,0 +1,389 @@
+:root{
+  --transition: all 0.3s ease;
+}
+
+body {
+  background-color: white;
+  font-family: arial, sans-serif;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><path fill="%23ffffff22" d="M0,100 C300,200 700,0 1000,100 L1000,00 L0,0 Z"/></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 80px;
+  margin: 0;
+}
+
+.navbar{
+
+  position: fixed;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--transition);
+  z-index: 1000;
+  transition: var(--transition);
+  background-color: #A2D5C6;
+  top: 0;
+
+}
+
+.navbar-contenedor{
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  line-height: 70px;
+  max-width: 1200px;
+}
+
+.logo img{
+
+  height: auto;
+  margin-top: 30px;
+  width: 70px;
+    
+}
+
+.nav-links{
+
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+
+}
+
+.links{
+
+  color: #1A4C48;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.links::after{
+  content: '';
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #27ae60;
+  transition: var(--transition);
+  position: absolute;
+}
+
+.links:hover::after,
+.links.active::after{
+  width: 100%;
+}
+
+.Hamburguesa{
+
+  flex-direction: column;
+  cursor: pointer;
+  display: none;
+}
+
+.Hamburguesa span{
+
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: var(--transition);
+  width: 25px;
+}
+
+.perfil{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.login-icon {
+  font-size: 28px;
+  color: #1A4C48;
+  cursor: pointer;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 30px;          
+  width: 50px;
+  font-weight: 900;
+}
+
+
+.login-icon::before{
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: var(--transition);
+  color: #1A4C48;
+  content: "\f2f6";
+}
+
+.login-icon::after{
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition);
+  color: #1A4C48;
+  content: "\f6be";
+}
+
+.login-icon:hover::before{
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.login-icon:hover::after{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+
+
+.titulo {
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.titulo h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+
+
+.lugares {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 30px;
+}
+
+.lugar {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.lugar:hover {
+    transform: scale(1.05);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.lugar::after {
+    content: attr(data-nombre);
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translate(-50%);
+    color: #222;
+    font-weight: bold;
+    text-shadow: 18px;
+    text-align: center;
+    width: 100%;
+    line-height: 1.2;
+}
+
+.lugar:nth-child(1) {
+    background-image: url(https://travelgrafia.co/wp-content/uploads/2022/07/Puerto-Narino-visto-desde-el-Mirador.webp);
+}
+
+.lugar:nth-child(2) {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Aerial_view_at_Guatape%2C_Antioquia%2C_Colombia.jpg/760px-Mapcarta.jpg);
+}
+
+.lugar:nth-child(3) {
+    background-image: url(https://radionacional-v3.s3.amazonaws.com/s3fs-public/styles/portadas_relaciona_4_3/public/node/article/field_image/Arauquita%205.jpg?h=7b436a88&itok=r-yrV8H7);
+}
+
+.lugar:nth-child(4) {
+    background-image: url(https://caracol.com.co/resizer/v2/5E2AZE3V2FD7HC5LKWHWYFAGKU.jpg?auth=39c78a8db0d8cc2a4e1ab9e3e1abdeb084194e0f16849edd8012aba5da741d30&width=650&height=488&quality=70&smart=true);
+}
+
+.lugar:nth-child(5) {
+    background-image: url(https://www.triviantes.com/wp-content/uploads/2022/07/bolivar-1.jpg);
+}
+
+.lugar:nth-child(6) {
+    background-image: url(https://www.semana.com/resizer/v2/JW6KOFNKWFAQVFRWPK2V6AMCVE.jpg?auth=9caf9f215900de857b3790e929151b6bee72e7bbdc2ff22024ed2d7682eb32c8&smart=true&quality=75&width=1280);
+}
+
+.lugar:nth-child(7) {
+    background-image: url(https://www.triviantes.com/wp-content/uploads/2022/08/departamento-caldas-1.jpg);
+}
+
+.lugar:nth-child(8) {
+    background-image: url(https://radionacional-v3.s3.amazonaws.com/s3fs-public/styles/portadas_relaciona_4_3/public/senalradio/articulo-noticia/galeriaimagen/1974360_712817468780277_1502651173208004369_o.jpg?h=4521fff0&itok=BzklDtKz);
+}
+
+.lugar:nth-child(9) {
+    background-image: url(https://ruta65.co/wp-content/uploads/2021/05/3-1024x576.png);
+}
+
+.lugar:nth-child(10) {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Silvia_Cauca_3.JPG/250px-Silvia_Cauca_3.JPG);
+}
+
+.lugar:nth-child(11) {
+    background-image: url(https://elpilon2024.s3.us-west-2.amazonaws.com/2024/06/valledupar-2.jpg);
+}
+
+.lugar:nth-child(12) {
+    background-image: url(https://radionacional-v3.s3.amazonaws.com/s3fs-public/styles/portadas_relaciona_4_3/public/node/article/field_image/istmina_0.jpg?h=6eb229a4&itok=nhSay7yW);
+}
+
+.lugar:nth-child(13) {
+    background-image: url(https://regioncaribe.com.co/wp-content/uploads/2021/11/Monteria-Cordoba-2021.jpg);
+}
+
+.lugar:nth-child(14) {
+    background-image: url(https://media.istockphoto.com/id/515192236/es/foto/sal-zipaquira-vista-de-la-catedral-de-afar.jpg?s=612x612&w=0&k=20&c=qQ2kGhmdW6vYtWRSLW6AjAIGkmN2qCPbjDyYhh1ybtk=);
+}
+
+.lugar:nth-child(15) {
+    background-image: url(https://incentivamoscolombia.com/wp-content/uploads/2019/04/Sin-titulo-1.webp);
+}
+
+.lugar:nth-child(16) {
+    background-image: url(https://carrent.com.co/assets/media/san-jose-del-guaviare.jpg?u=1663776868);
+}
+
+.lugar:nth-child(17) {
+    background-image: url(https://rednoticiashuila.com/wp-content/uploads/2021/12/10-2.jpg);
+}
+
+.lugar:nth-child(18) {
+    background-image: url(https://travelfine.es/wp-content/uploads/2024/06/116.3-colombia-la-guajira.jpg);
+}
+
+.lugar:nth-child(19) {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Cabo_San_Juan%2C_Colombia.jpg/250px-Cabo_San_Juan%2C_Colombia.jpg);
+}
+
+.lugar:nth-child(20) {
+    background-image: url(https://www.triviantes.com/wp-content/uploads/2022/10/departamento-meta-de-colombia-2.jpg);
+}
+
+.lugar:nth-child(21) {
+    background-image: url(https://archivo.minambiente.gov.co/images/12-marz2018-nari.jpg);
+}
+
+.lugar:nth-child(22) {
+    background-image: url(https://regions.colombia.travel/sites/default/files/inline-images/Norte%20de%20santander2.png);
+}
+
+.lugar:nth-child(23) {
+    background-image: url(https://verdadabierta.com/wp-content/uploads/2017/10/cnmh-putumayo-1.jpg);
+}
+
+.lugar:nth-child(24) {
+    background-image: url(https://mediaim.expedia.com/destination/1/074735eac4b7d7a9ded0eabcd87fed8b.jpg);
+}
+
+.lugar:nth-child(25) {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Alto_del_Nudo_-_Pereira.jpg/330px-Alto_del_Nudo_-_Pereira.jpg);
+}
+
+.lugar:nth-child(26) {
+    background-image: url(https://playasdecolombia.co/wp-content/uploads/2024/02/isla-de-san-andres-playas-de-colombia-2-1200x675.webp);
+}
+
+.lugar:nth-child(27) {
+    background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/36/b5/4c/la-playa-de-belen-anu.jpg?w=1400&h=1400&s=1);
+}
+
+.lugar:nth-child(28) {
+    background-image: url(https://viajandox.com.co/uploads/min_Sincelejo_1.jpg);
+}
+
+.lugar:nth-child(29) {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/9a/Ibagu%C3%A9.jpg);
+}
+
+.lugar:nth-child(30) {
+    background-image: url(https://visitvalle.travel/wp-content/uploads/2025/02/CALI-VALLE-DEL-CAUCA.webp);
+}
+
+.lugar:nth-child(31) {
+    background-image: url(https://i.pinimg.com/736x/37/86/5c/37865c339442442b6b09311c4a75e837.jpg);
+}
+
+.lugar:nth-child(32) {
+    background-image: url(https://a.travel-assets.com/findyours-php/viewfinder/images/res70/474000/474758-El-Tuparro-National-Natural-Park.jpg);
+}
+
+
+
+
+
+
+
+
+.fundacion-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 420px;
+  margin: 80px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.fundacion-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #3a803a;
+}
+
+.fundacion-info h2 {
+  color: #2b6e2b;
+  margin-bottom: 10px;
+}
+
+.fundacion-info p {
+  color: #444;
+  line-height: 1.5;
+}
+
+.volver {
+  display: inline-block;
+  margin-top: 25px;
+  background-color: #3a803a;
+  color: white;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.volver:hover {
+  background-color: #2b6e2b;
+}
+
+

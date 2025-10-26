@@ -92,3 +92,66 @@ startAutoPlay();
 
 // Inicializar carrusel
 updateCarousel()
+
+document.addEventListener('DOMContentLoaded', function(){
+
+    const navbar = document.getElementById('navbar');
+    const Hamburguesa = document.getElementById('Hamburguesa');
+    const navLinks = document.getElementById('nav-links');
+    const Links = document.querySelectorAll('.links');
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const Links = document.querySelectorAll('.links');
+        const currentLocation = window.location.pathname.split("/").pop();
+
+        Links.forEach(link => {
+
+            if(link.getAttribute("href") === currentLocation){
+                link.classList.add("active");
+            }
+        });
+    });
+
+
+    function handleNavbarScroll(){
+            if(window.scrollY > 100){
+
+                navbar.style.background = 'rgba(255,255,255,0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }else {
+                navbar.style.background = 'rgba(255,255,255,0.95)';
+                navbar.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            }
+    }
+
+    window.addEventListener('scroll', () =>{
+            updateActiveLinks();
+            handleNavbarScroll();
+    });
+
+    Hamburguesa.addEventListener('click', () => {
+
+            Hamburguesa.classList.toggle('active');
+            navLinks.classList.toggle('active');
+    });
+
+    Links.forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            Hamburguesa.classList.remove('active');
+            navLinks.classList.remove('active');
+
+        });
+
+    });
+
+    updateActiveLinks();
+    handleNavbarScroll();
+    
+
+});
+
+var copy = document.querySelector('.Slide-logos').cloneNode(true);
+document.querySelector('.Logos').appendChild(copy);

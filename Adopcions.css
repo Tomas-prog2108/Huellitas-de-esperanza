@@ -1,0 +1,247 @@
+:root{
+  --transition: all 0.3s ease;
+}
+
+body {
+    font-family: arial, sans-serif;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    padding-top: 80px;
+}
+
+.navbar{
+
+  position: fixed;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--transition);
+  z-index: 1000;
+  transition: var(--transition);
+  background-color: #A2D5C6;
+  top: 0;
+
+}
+
+.navbar-contenedor{
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  line-height: 70px;
+  max-width: 1200px;
+}
+
+.logo img{
+
+  height: auto;
+  margin-top: 30px;
+  width: 70px;
+    
+}
+
+.nav-links{
+
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+
+}
+
+.links{
+
+  color: #1A4C48;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.links::after{
+  content: '';
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #27ae60;
+  transition: var(--transition);
+  position: absolute;
+}
+
+.links:hover::after,
+.links.active::after{
+  width: 100%;
+}
+
+.Hamburguesa{
+
+  flex-direction: column;
+  cursor: pointer;
+  display: none;
+}
+
+.Hamburguesa span{
+
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: var(--transition);
+  width: 25px;
+}
+
+.perfil{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.login-icon {
+  font-size: 28px;
+  color: #1A4C48;
+  cursor: pointer;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 30px;          
+  width: 50px;
+  font-weight: 900;
+}
+
+
+.login-icon::before{
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: var(--transition);
+  color: #1A4C48;
+  content: "\f2f6";
+}
+
+.login-icon::after{
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition);
+  color: #1A4C48;
+  content: "\f6be";
+}
+
+.login-icon:hover::before{
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.login-icon:hover::after{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+p {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  text-align: center;
+  margin-top: 50px;
+
+}
+
+h2 {
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  text-align: center;
+}
+
+
+
+.boton {
+  display: inline-block;
+  background-color: rgb(9, 88, 94);
+  color: white;
+  border-radius: 12px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-position: inside; /* hacen que las viñetas se hagan parte del texto */
+  text-align: center;
+  padding: 0;
+  font-size: 20px;
+}
+
+img {
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+#adopcion {
+    text-align: center;
+    margin: 20px;
+}
+
+.contenedor-cajas {
+  display: flex;
+  justify-content: center;     /* pone las cajas horizontales juntas*/
+  align-items: flex-start;     /* alinea arriba (opcional) */
+  gap: 40px;                   /* espacio entre las cajas */
+  flex-wrap: nowrap;           /* evita que una caja quede abajo */
+  margin-top: 30px;
+}
+
+
+.caja {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgb(148, 251, 242);
+  width: 400px;
+  height: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* centra el texto de forma vertical */
+  align-items: center;
+}
+
+
+
+.caja:hover {
+  transform: scale(1.05);/*hace zoom cuando se pasa el mouse por encima */
+}
+
+.perros {
+    align-items: center;
+    background-color: rgb(148, 251, 242);
+}
+.gatos {
+    align-items: center;
+    background-color: rgb(148, 251, 242);
+}
+

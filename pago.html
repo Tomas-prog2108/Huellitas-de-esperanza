@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donar</title>
+  <link rel="stylesheet" href="Donacions.css">
+  <style>
+    /* Puedes añadir esto dentro de tu style.css si quieres mantenerlo ordenado */
+    form {
+      max-width: 400px;
+      margin: 30px auto;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Completa tu donación 🐾</h1>
+  <p>Por favor ingresa tu información para continuar.</p>
+
+  <form action="gracias.html" method="get">
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre" required>  
+
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
+
+    <label for="cedula">Cédula:</label>
+    <input type="text" id="cedula" name="cedula" required>
+
+    <label for="monto">Monto a donar (COP):</label>
+    <input type="number" id="monto" name="monto" min="50000" step="10000" required>
+
+    <button type="submit">Donar ahora</button>
+  </form>
+
+  <p style="text-align:center;"><a href="Donación.html">← Volver</a></p>
+</body>
+</html>
+
