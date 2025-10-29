@@ -195,6 +195,98 @@ body {
   font-weight: 500;
 }
 
+.footer{
+    background: #1d4d3a;
+    color: #f1f9f4;
+    padding: 60px 100px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-contenedor{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.footer-logo img{
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p{
+
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-contact h4{
+    position: relative;
+    margin: 1rem;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.footer-contact h4::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 2px;
+    background: white;
+    bottom: -5px;
+}
+
+.F-C-Con{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: #dcdcdc;
+    font-size: 1rem;
+}
+
+
+.footer-icon a{
+    color: #f1f9f4;
+    margin-right: 15px;
+    font-size: 18px;
+    transition: var(--transition); 
+}
+
+.fa-facebook-f,
+.fa-instagram, 
+.fa-x-twitter{
+    transition: var(--transition);
+}
+
+.fa-facebook-f:hover, 
+.fa-instagram:hover, 
+.fa-x-twitter:hover{
+    font-size: 23px;
+}
+
+.footer-icon a:hover{
+    color: #b3e6c5;
+}
+
+.footer-bottom{
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 15px;
+  font-size: 0.8rem;
+}
 
 
 @media (max-width: 600px) {

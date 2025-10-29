@@ -20,6 +20,9 @@ body{
 
 }
 
+span{
+    font-style: italic;
+}
 
 
 .navbar{
@@ -137,7 +140,7 @@ body{
 }
 
 .login-icon::after{
-    content: "\f6be";
+    content: "\f6d3";
     font-weight: 900;
     position: absolute;
     top: 0;
