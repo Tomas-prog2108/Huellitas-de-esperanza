@@ -208,7 +208,7 @@ table tr:last-child td {
 }
 
 .boton-donacion:hover {
-    background-color: #6396d9;
+    background-color: #27ae60;
     color: white;
     transform: translateY(-3px);
 }
